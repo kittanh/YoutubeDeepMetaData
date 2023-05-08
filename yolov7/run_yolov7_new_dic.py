@@ -93,7 +93,7 @@ def run_yolov7_videos(paths, batch_size, division):
   return videos
 
 ### sur plusieurs vidéos
-def run_yolov7_batch(video_paths, batch_size, division):
+def run_yolov7_batch(video_paths, batch_size, division, json_size, last_video):
   torch.cuda.empty_cache()
   
   # Initializing model and setting it for inference
@@ -138,16 +138,16 @@ def run_yolov7_batch(video_paths, batch_size, division):
     
 
     
-    num = 6
+    num = (last_video//json_size)+1
     json_nom = 'all_vid_yolo_' + str(num) + '.json'
 
     for num_video, video_path in enumerate(video_paths):
-      if num_video >= 5363:
-        if num_video%1000 == 0 and num_video!=0:
+      if num_video >= last_video:
+        if num_video%json_size == 0 and num_video!=0:
           num += 1
           json_nom = 'all_vid_yolo_' + str(num) + '.json'
 
-        if num_video == 0 or num_video%1000== 0:
+        if num_video == 0 or num_video%json_size== 0:
           with open(json_nom, 'a') as f:
             f.write('[')
 
@@ -286,7 +286,7 @@ def run_yolov7_batch(video_paths, batch_size, division):
 
         # save the JSON string to file
         last_char = ', '
-        if num_video == len(video_paths)-1 or num_video%1000==999:
+        if num_video == len(video_paths)-1 or num_video%json_size==json_size-1:
           last_char = "]"
 
         with open(json_nom, 'a') as f:
@@ -488,7 +488,7 @@ def main():
   # video_files = ["/home/deepmetadata/yolov7/Test.mp4"]
   # video_files = ["/home/deepmetadata/places365-1/videos/Ficello - formes 'le fromage trop rigolo' Pub 30s-qOQk5_aQfD4.mp4"]
   # res = run_yolov7_batch(video_files, 32, 1)
-  run_yolov7_batch(video_files, 128, 1)
+  run_yolov7_batch(video_files, 128, 1, 1000, 5745)
 
   # json_str = json.dumps(res)
 
