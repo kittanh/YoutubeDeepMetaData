@@ -1,6 +1,16 @@
 # YoutubeDeepMetaData
 
 ## Comment exécuter le projet ?
+
+### Installation des packages
+
+Avant d'exécuter tout code, il est nécessaire d'installer les packages présents dasn le fichier requirements.txt.
+Pour ce faire, se placer à la racine du projet. Ensuite, faire la commande :
+
+```shell
+pip install requirements.txt
+```
+
 ### Pour exécuter PLACES365
 ```shell
 places365/batch_playlist.py
