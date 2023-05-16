@@ -1,0 +1,65 @@
+/* Styles pour le corps de la page */
+body {
+  font-family: Georgia, sans-serif;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+/* Styles pour les en-têtes */
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+h2 {
+  font-size: 24px;
+  color: #666;
+  margin-top: 30px;
+}
+
+/* Styles pour les paragraphes */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Styles pour les liens */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #59A7BF;
+  color: white;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+ul li {
+  margin: 5px 0;
+}
