@@ -55,7 +55,6 @@ main/combine_dic.py
 ```python
 for i in range(num_premier_json, num_dernier_json):
 ```
-## Comment utiliser les bases de données créées ?
+## Et après ?
 
-Une fois les données générées, il est possible de faire des requêtes via une interface réalisée avec Flask.
-Pour cela, il faut tout d'abord avoir lancé elasticsearch. Nous avons utilisé l'image suivante sur Docker : docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+Il est possible de consulter et faire des requêtes sur les données générées. Pour cela, voir le dossier "flask".
